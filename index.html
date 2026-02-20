@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeevanantham K | Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #e5e7eb;
+      line-height: 1.8;
+
+      background: linear-gradient(-45deg, #000000, #401648, #041542, #65dbdf);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      background: rgba(0,0,0,0.3);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav h2 { color: #38bdf8; }
+
+    nav a {
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 20px;
+      transition: 0.3s;
+    }
+
+    nav a:hover { color: #38bdf8; }
+
+    /* Hero */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    /* Profile Image */
+    .profile-container {
+      margin-bottom: 20px;
+    }
+
+    .profile-img {
+      width: 150px;
+      height: 210px;
+      border-radius: 60%;
+      object-fit: cover;
+      border: 3px solid #1998ce;
+      box-shadow: 0 0 25px rgba(56,189,248,0.6);
+      transition: 0.4s;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(56,189,248,1);
+    }
+
+    .hero h1 {
+      font-size: 52px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Typing Animation */
+    .typing {
+      font-size: 18px;
+      border-right: 2px solid #38bdf8;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 1s infinite;
+      margin-top: 10px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 320px }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    /* Slogan Animation */
+    .slogan-container {
+      margin-top: 15px;
+      height: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #slogan {
+      font-size: 16px;
+      color: #94a3b8;
+      display: inline-block;
+      animation: fadeSlide 1s ease;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .btn {
+      margin-top: 25px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      border: none;
+      background: linear-gradient(90deg, #38bdf8, #6366f1);
+      color: white;
+      cursor: pointer;
+      font-size: 15px;
+      transition: 0.3s;
+      box-shadow: 0 0 20px rgba(56,189,248,0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(56,189,248,0.8);
+    }
+
+    section {
+      padding: 70px 10%;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 0.8s;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #38bdf8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 25px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      border-color: #38bdf8;
+      box-shadow: 0 0 25px rgba(56,189,248,0.4);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: #cbd5e1;
+    }
+
+    @media(max-width: 768px) {
+      .hero h1 { font-size: 34px; }
+      .typing { width: 250px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Jeevanantham K</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="hero">
+
+  <!-- Profile Photo -->
+  <div class="profile-container">
+    <img src="image.jpg" alt="Jeevanantham" class="profile-img">
+  </div>
+
+  <h1>Jeevanantham</h1>
+
+  <div class="typing">UI/UX Designer | Web Developer</div>
+
+  <div class="slogan-container">
+    <span id="slogan">Designing Experiences, Not Just Interfaces</span>
+  </div>
+
+  <button class="btn">Download Resume</button>
+
+</div>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>I am a dedicated student and aspiring UI/UX and Web Developer with a passion for designing modern,
+      user-friendly, and visually appealing digital experiences.</p>
+
+    <p>I enjoy learning new technologies and applying my creativity to develop responsive websites and
+      intuitive user interfaces.</p>
+
+    <p>Through academic projects and self-practice, I have gained foundational knowledge in web development
+      and design principles.</p>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">Python</div>
+    <div class="card">C Programming</div>
+    <div class="card">HTML & CSS</div>
+    <div class="card">AI & Machine Learning</div>
+    <div class="card">GitHub</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Portfolio Website</h3>
+      <p>Personal responsive portfolio using modern HTML & CSS.</p>
+    </div>
+
+    <div class="card">
+      <h3>Python Applications</h3>
+      <p>Developed mini applications and games using Python.</p>
+    </div>
+
+    <div class="card">
+      <h3>AI Project</h3>
+      <p>Working on Machine Learning based future project.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Contact --> 
+ <section id="contact"> 
+  <h2>Contact</h2> 
+  <div class="card"> 
+    <p><strong>Name:</strong> Jeevanantham K</p></div> 
+    <br> <div class="card"> 
+      <p>Email:
+      <a href="mailto:kjeevanandham25@gmail.com">kjeevanandham25@gmail.com</a></p></div>         
+      <br> <div class="card"> 
+      <p>Contact: 
+      <a href="tel:+918778277344">+91 8778277344</a></p></div> 
+      <br> 
+      <div class="card"> 
+      <p>Github profile: 
+      <a href="https://github.com/jeevanantham25-hub" target="_blank">https://github.com/jeevanantham25-hub</a></p></div> 
+ </section>
+
+<footer>
+  © 2026 Jeevanantham | Modern Portfolio
+</footer>
+
+<script>
+  // Scroll Animation
+  const sections = document.querySelectorAll("section");
+
+  window.addEventListener("scroll", () => {
+    sections.forEach(sec => {
+      const top = sec.getBoundingClientRect().top;
+      if (top < window.innerHeight - 100) {
+        sec.classList.add("show");
+      }
+    });
+  });
+
+  // Slogan Auto Change
+  const slogans = [
+    "Designing Experiences, Not Just Interfaces",
+    "Creating Modern & User-Friendly Websites",
+    "Turning Ideas Into Digital Reality",
+    "Passionate About UI/UX Innovation",
+    "Building Creative Web Solutions"
+  ];
+
+  let index = 0;
+  const sloganElement = document.getElementById("slogan");
+
+  function changeSlogan() {
+    index = (index + 1) % slogans.length;
+
+    sloganElement.style.animation = "none";
+    void sloganElement.offsetWidth;
+    sloganElement.style.animation = "fadeSlide 1s ease";
+
+    sloganElement.textContent = slogans[index];
+  }
+
+  setInterval(changeSlogan, 5000);
+</script>
+
+</body>
+</html>
