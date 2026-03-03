@@ -11,20 +11,14 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Poppins', sans-serif;
-      color: #e5e7eb;
-      line-height: 1.8;
-
-      background: linear-gradient(-45deg, #000000, #401648, #041542, #65dbdf);
-      background-size: 400% 400%;
-      animation: gradientBG 10s ease infinite;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
+            margin: 0;
+            padding: 0;
+            background-image: url("90595.jpg");
+            background-size: cover;        /* Full screen */
+            background-position: center;   /* Center image */
+            background-repeat: no-repeat;  /* No repeat */
+            height: 300vh;
+        }
 
     /* Navbar */
     nav {
@@ -32,7 +26,7 @@
       justify-content: space-between;
       align-items: center;
       padding: 15px 40px;
-      background: rgba(0,0,0,0.3);
+      background: rgba(26, 25, 25, 0.3)8, 0.3;
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255,255,255,0.08);
       position: sticky;
@@ -73,10 +67,10 @@
     }
 
     .profile-img {
-      width: 150px;
+      width: 200px;
       height: 210px;
-      border-radius: 60%;
-      object-fit: cover;
+      border-radius: 70%;
+      object-fit: contain;
       border: 3px solid #1998ce;
       box-shadow: 0 0 25px rgba(56,189,248,0.6);
       transition: 0.4s;
@@ -90,6 +84,7 @@
     .hero h1 {
       font-size: 52px;
       background: linear-gradient(90deg, #38bdf8, #818cf8);
+      background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -183,8 +178,8 @@
     }
 
     .card {
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: #529cd2fb;
+      border: 1px solid rgb(0, 0, 0);
       padding: 25px;
       border-radius: 15px;
       backdrop-filter: blur(10px);
@@ -200,7 +195,7 @@
     footer {
       text-align: center;
       padding: 20px;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      border-top: 1px solid rgba(50, 51, 46, 0.858);
       color: #cbd5e1;
     }
 
@@ -212,9 +207,7 @@
 </head>
 
 <body>
-
 <nav>
-  <h2>Jeevanantham K</h2>
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
@@ -227,12 +220,12 @@
 
   <!-- Profile Photo -->
   <div class="profile-container">
-    <img src="image.jpg" class="profile-img">
+    <img src="photo.jpeg" class="profile-img">
   </div>
 
   <h1>Jeevanantham</h1>
 
-  <div class="typing">UI/UX Designer | Web Developer</div>
+  <div class="typing" style="color: #0f39e3;">UI/UX Designer | Web Developer</div>
 
   <div class="slogan-container">
     <span id="slogan">Designing Experiences, Not Just Interfaces</span>
@@ -291,14 +284,15 @@
  <section id="contact"> 
   <h2>Contact</h2> 
   <div class="card"> 
-    <p><strong>Name:</strong> Jeevanantham K</p></div> 
-    <br> <div class="card"> 
+
+      <div class="card"> 
       <p>Email:
       <a href="mailto:kjeevanandham25@gmail.com">kjeevanandham25@gmail.com</a></p></div>         
-      <br> <div class="card"> 
+      
+      <div class="card"> 
       <p>Contact: 
       <a href="tel:+918778277344">+91 8778277344</a></p></div> 
-      <br> 
+      
       <div class="card"> 
       <p>Github profile: 
       <a href="https://github.com/jeevanantham25-hub" target="_blank">https://github.com/jeevanantham25-hub</a></p></div> 
@@ -348,5 +342,4 @@
 
 </body>
 </html>
-
 
